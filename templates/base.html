@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+{% load unicorn %}
+<html lang="zxx">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quickeat - index</title>
+  <link rel="icon" href="assets/img/fav-icon.png">
+
+  <!-- ========================= CSS here ========================= -->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap-5.0.0-alpha-2.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/aos.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}" />
+  <link rel="stylesheet" href="{% static 'assets/css/color.css' %}" />
+  <script src="{% static 'assets/js/27a041baf1.js' %}"></script>
+  <script src="https://kit.fontawesome.com/27a041baf1.js" crossorigin="anonymous"></script>
+  {% unicorn_scripts %}
+</head>
+
+<body class="menu-layer" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
+
+  {% csrf_token %}
+  <!-- ========================= preloader start ========================= -->
+  
+  {% block content %} {% endblock %}
+
+  <!-- ========================= scroll-top ========================= -->
+  <a href="#" class="scroll-top btn-hover">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <!-- ========================= JS here ========================= -->
+  <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'assets/js/aos.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+
+</html>

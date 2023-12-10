@@ -1,0 +1,16 @@
+{% load unicorn %}
+    <div class="container">
+        {% if items %}
+        <div class="row">
+            {% for item in items %}
+
+            {% unicorn 'farmers_components.card' item=item key=item.id %}
+            
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="row">
+            Nothing yet
+        </div>
+        {% endif %}
+    </div>

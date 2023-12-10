@@ -1,0 +1,36 @@
+          {% load unicorn %}
+          {{ items_ckecked }}
+          <div class="col-lg-6 aos-init aos-animate mb-3" data-aos="flip-up" data-aos-delay="200" data-aos-duration="300">
+                <div class="logos-card restaurant-page">
+                    <img alt="logo" src="/static/assets/img/logos-2.jpg">
+                    <div class="cafa">
+                        <h4><a href="{% url 'farmer' pk=item.farmer.pk %}">Farm Name</a></h4>
+                        <h5><a href="{% url 'farmer' pk=item.farmer.pk %}">{{ item.produce }} <span>-{{ item.quantity }}</span></a></h5>
+                        <!--div>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-solid fa-star" aria-hidden="true"></i>
+                            <i class="fa-regular fa-star" aria-hidden="true"></i>
+                        </div-->
+                        <div class="cafa-button">
+                            <a href="{{ item.search_url }}">Compare</a>
+                            <a href="#">Compare</a>
+                            <a class="end" href="#">Similar</a>
+                        </div>
+                       
+                       
+                    </div>
+                    <div>
+                        <p>{{ item.desc }}. b vvvv vvvv fff fffffffbbb bbb vvvvvvvv fffffff bbbbbb vvvvvvvv fffffff</p>     
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <div>
+                            <button class="btn btn-primary"  unicorn:click="add_item()" {% if clicked %} disabled {% else %} '' {% endif %} >Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+           
+           

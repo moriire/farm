@@ -1,0 +1,36 @@
+{% load unicorn %}
+<section class="hero-section about blog-page .gap" style="background-image: url(/static/assets/img/farmers-home.jpg); background-size: cover; background-position: center;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
+                <div class="about-text">
+                    <ul class="crumbs d-flex">
+                        <li><a href="/">Home</a></li>
+                        <li class="two"><a href="/"><i class="fa-solid fa-right-long"
+                                    aria-hidden="true"></i>Farmers Posts</a></li>
+                    </ul>
+                    <h2>Want to join?</h2>
+                    <p>Egestas sed tempus urna et pharetra pharetra.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <div class="container">
+        {% if items %}
+        
+        <div class="row">
+            {% for item in items %}
+
+            {% unicorn 'farmers_components.card' item=item key=item.id %}
+            
+            {% endfor %}
+
+        </div>
+        {% else %}
+        <div class="row">
+            Nothing yet
+        </div>
+        {% endif %}
+    </div>
