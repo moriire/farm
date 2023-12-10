@@ -3,6 +3,12 @@ from .models import Items
 from users.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
 
+
+from django_unicorn.components import UnicornView
+
+class IndexView(UnicornView):
+    template_name = "index.html"
+
 class Farmers(LoginRequiredMixin, TemplateView):
     template_name = "farmers.html"
 

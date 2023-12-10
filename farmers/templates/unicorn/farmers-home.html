@@ -149,20 +149,7 @@
                  
                   <ul>
                     {% for cart in items_checked %}
-                    <li class="price-list mt-4">
-                      <i class=".closeButton fa-solid fa-xmark" aria-hidden="true" unicorn:click="remove_item(cart)"></i>
-                      <div class="counter-container">
-                        <div class="counter-food">
-                            <img alt="food" src="/static/assets/img/order-1.png" >
-                          <h4 class="mx-3">{{ cart.produce.name }}</h4>
-                        </div>
-                        <h4>&#8358; {{ cart.price }}</h4>
-                        
-                      </div>
-                      <div class="price">
-                        
-                      </div>
-                    </li>
+                    {% unicorn 'farmers_components.cart-list' cart=cart key=cart.id  %}
                     {% endfor %}
                    
                   </ul>
@@ -174,7 +161,7 @@
                     <span>To pay:</span>
                     <h2>&#8358;{{ total_price }}</h2>
                   </div-->
-                  <button class="button-price">Checkout</button>
+                  <button class="button-price"unicorn:click="save_to_db()">Checkout</button>
     
                 </div>
               </div>
@@ -270,4 +257,5 @@
     {% unicorn 'farmers_components.items-list' items=items %}
 </section>
 {% unicorn 'footer' %}
+
 </div>
