@@ -9,3 +9,6 @@ class CartItems(models.Model):
     unit = models.IntegerField(default=1)
     def __str__(self) -> str:
         return self.item.produce.name
+    
+    def cart_item_amount(self):
+        return self.item.price * self.unit

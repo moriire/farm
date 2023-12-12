@@ -17,15 +17,16 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     USERNAME_FIELD = "email"
-
     REQUIRED_FIELDS = ["first_name",  "last_name"]
 
     def __str__(self):
         return self.email
 
-    def absolute_url(self):
-        return reverse('flash-detail', args=(self.id,))
-
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}"
- 
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, related_name="user_profile", primary_key=True, on_delete=models.CASCADE)
+    state = models.CharField(max_length=20, null=True, blank=True)
+    street = models.CharField(max_length=60, null=True, blank=True)
+    house_no = models.CharField(max_length=5, null=True, blank=True)

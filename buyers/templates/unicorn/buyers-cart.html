@@ -1,0 +1,51 @@
+{% load unicorn %}
+<div class="checkout-order">
+    <div class="title-checkout">
+        <h2>Your order:</h2>
+        <h6>{{ order_count }}</h6>
+    </div>
+    <div class="banner-wilmington">
+        <img alt="logo" src="assets/img/logo-s.jpg">
+        <h6>Kennington Lane Cafe</h6>
+    </div>
+    <ul>
+        {% for item in items %}
+        <li class="price-list">
+            <i class=".closeButton fa-solid fa-xmark" aria-hidden="true" unicorn:click="del_item({{item.id}})" role="button"></i>
+            <div class="counter-container">
+                <div class="counter-food">
+                    <img alt="food" src="/static/assets/img/order-1.png">
+                    <h4 class="mx-4">{{ item.item.produce }}</h4>
+                </div>
+                <h3>&#8358; {{ item.item.price }}</h3>
+            </div>
+            <div class="price">
+                <div>
+                    <h2>&#8358; {{ item.cart_item_amount }}</h2>
+                    <span>Sum</span>
+                </div>
+                <div>
+                    <div class="qty-input">
+                        <button class="qty-count qty-count--minus" data-action="minus" unicorn:click="minus({{item.id}})"
+                            type="button">-</button>
+                        <input class="product-qty" type="number" name="product-qty" min="0"
+                            value="{{ item.unit }}">
+                        <button class="qty-count qty-count--add" data-action="add" unicorn:click="plus({{item.id}})"
+                            type="button">+</button>
+                    </div>
+                    <span>Quantity</span>
+                </div>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="totel-price">
+        <span>Total order:</span>
+        <h5>&#8358; {{ total_price }}</h5>
+    </div>
+    <div class="totel-price">
+        <span>To pay:</span>
+        <h2>&#8358; {{ total_price }}</h2>
+    </div>
+
+</div>

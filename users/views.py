@@ -62,7 +62,7 @@ def signup_view(request):
         if form.is_valid():
             user = form.save()
             user.refresh_from_db()
-            #user.user_agent.first_name = form.cleaned_data.get('first_name')
+            user.user_profile.user = user
             #user.user_agent.last_name = form.cleaned_data.get('last_name')
             #user.user_agent.email = form.cleaned_data.get('email')
             # user can't login until link confirmed

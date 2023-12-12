@@ -1,0 +1,33 @@
+{% load unicorn %}
+<form class="checkout-form" unicorn:submit.prevent="user_save()" method="post">
+    {% csrf_token %} 
+    <h4>Merchant information</h4>
+    <input type="text" name="first_name" placeholder="Full Name" unicorn:model="user.first_name" />
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" name="email" placeholder="E-mail" unicorn:model="user.email">
+        </div>
+        <div class="col-lg-6">
+            <input type="text" name="phone" placeholder="Phone" unicorn:model="user.phone">
+        </div>
+    </div>
+    <h4 class="two">Delivery addresses</h4>
+    <select class="nice-select Advice" style="display: none;" unicorn:model="user.user_profile.state">
+        <option>California</option>
+        <option>California 1</option>
+        <option>California 2</option>
+        <option>California 3</option>
+        <option>California 4</option>
+    </select>
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" name="street" placeholder="Street" unicorn:model="user.user_profile.street">
+        </div>
+        <div class="col-lg-6">
+            <input type="text" name="house-no" placeholder="House number" unicorn:model="user.user_profile.house_no">
+        </div>
+        
+    </div>
+    
+    <button class="button-price" unicorn:click="user_save()">Pay</button>
+</form>
