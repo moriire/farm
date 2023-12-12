@@ -1,4 +1,4 @@
-from django_unicorn.components import UnicornView
+from django_unicorn.components import UnicornView, LocationUpdate
 from farmers.models import Items, Crop
 from users.models import User
 from django.contrib import messages

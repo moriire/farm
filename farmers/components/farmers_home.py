@@ -1,6 +1,7 @@
-from django_unicorn.components import UnicornView, QuerySetType
+from django_unicorn.components import UnicornView, QuerySetType, LocationUpdate
 from farmers.models import Items
 from buyers.models import CartItems
+from django.shortcuts import redirect
 class FarmersHomeView(UnicornView):
     items:QuerySetType[Items] = Items.objects.none()#Initialize item from database
     items_checked=[]
@@ -38,5 +39,7 @@ class FarmersHomeView(UnicornView):
                 item = item_instance,
                 buyer = self.request.user
             )
+        #return LocationUpdate(redirect('cart'), 'success')
+        return redirect('cart')
 
 

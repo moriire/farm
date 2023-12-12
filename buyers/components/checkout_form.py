@@ -49,5 +49,6 @@ class CheckoutFormView(UnicornView):
         self.user = User.objects.get(pk=self.request.user.id)
         return super().mount()
     
-    def save_user(self):
-        self.user.save()
+    def save_user(self, user:User):
+        user.save()
+        user.user_profile.save()

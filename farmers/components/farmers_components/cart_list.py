@@ -1,4 +1,4 @@
-from django_unicorn.components import UnicornView, QuerySetType
+from django_unicorn.components import UnicornView, QuerySetType, LocationUpdate
 
 class CartListView(UnicornView):
     cart={}
@@ -14,7 +14,8 @@ class CartListView(UnicornView):
     
     def del_item(self):
         self.onclick()
-        #self.parent.items_checked.remove(self.cart)
-        #print('deleting')
+        self.parent.items_checked.remove(self.cart)
+        print('deleting')
         #self.parent.remove_item(self.cart)
+        
    

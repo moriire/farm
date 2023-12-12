@@ -1,5 +1,5 @@
 {% load unicorn %}
-<form class="checkout-form" unicorn:submit.prevent="user_save()" method="post">
+<form class="checkout-form" unicorn:submit.prevent="save_user(user.pk)">
     {% csrf_token %} 
     <h4>Merchant information</h4>
     <input type="text" name="first_name" placeholder="Full Name" unicorn:model="user.first_name" />
@@ -12,12 +12,11 @@
         </div>
     </div>
     <h4 class="two">Delivery addresses</h4>
+    {{ user.user_profile.state }}
     <select class="nice-select Advice" style="display: none;" unicorn:model="user.user_profile.state">
-        <option>California</option>
-        <option>California 1</option>
-        <option>California 2</option>
-        <option>California 3</option>
-        <option>California 4</option>
+        {% for code, state in states.items %}
+        <option value="code">{{ state }}</option>
+        {% endfor %}
     </select>
     <div class="row">
         <div class="col-lg-6">
@@ -28,5 +27,5 @@
         </div>
     </div>
     
-    <button class="button-price" unicorn:click="user_save()">Pay</button>
+    <button class="button-price" unicorn:click="save_user(user.pk)">Pay</button>
 </form>
