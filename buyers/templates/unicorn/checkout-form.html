@@ -1,31 +1,37 @@
 {% load unicorn %}
-<form class="checkout-form" unicorn:submit.prevent="save_user(user.pk)">
-    {% csrf_token %} 
-    <h4>Merchant information</h4>
-    <input type="text" name="first_name" placeholder="Full Name" unicorn:model="user.first_name" />
+<form class="checkout-form" method="put">
+    {% csrf_token %}
+    <h4>Merchant information</h4>{{ user.user.email }}
     <div class="row">
         <div class="col-lg-6">
-            <input type="text" name="email" placeholder="E-mail" unicorn:model="user.email">
+            <input type="text" placeholder="First Name" unicorn:model="user.user.first_name" />
         </div>
         <div class="col-lg-6">
-            <input type="text" name="phone" placeholder="Phone" unicorn:model="user.phone">
+            <input type="text" placeholder="Last Name" unicorn:model="user.user.last_name" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <input type="text" placeholder="E-mail" unicorn:model.defer="user.email">
+        </div>
+        <div class="col-lg-6">
+            <input type="text" placeholder="Phone" unicorn:model.defer="user.phone">
         </div>
     </div>
     <h4 class="two">Delivery addresses</h4>
-    {{ user.user_profile.state }}
-    <select class="nice-select Advice" style="display: none;" unicorn:model="user.user_profile.state">
+    <select class="nice-select Advice" style="display: none;" unicorn:model.defer="profile.state">
         {% for code, state in states.items %}
         <option value="code">{{ state }}</option>
         {% endfor %}
     </select>
     <div class="row">
         <div class="col-lg-6">
-            <input type="text" name="street" placeholder="Street" unicorn:model="user.user_profile.street">
+            <input type="text"  placeholder="Street" unicorn:model="profile.street">
         </div>
         <div class="col-lg-6">
-            <input type="text" name="house-no" placeholder="House number" unicorn:model="user.user_profile.house_no">
+            <input type="text"  placeholder="House number" unicorn:model.defer="profile.house_no">
         </div>
     </div>
     
-    <button class="button-price" unicorn:click="save_user(user.pk)">Pay</button>
+    <button class="button-price" type="submit" unicorn:click="save()" >Pay</button>
 </form>

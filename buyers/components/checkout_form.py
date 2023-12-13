@@ -1,10 +1,11 @@
 from django_unicorn.components import UnicornView
-from users.models import User
+from users.models import User, Profile
 from django.shortcuts import redirect
 
 class CheckoutFormView(UnicornView):
-    user = User.objects.none()
-    states = {
+    user: User = None
+    profile: Profile = None
+    states:dict[str] = {
                 'FC' : 'Abuja',
                 'AB' : 'Abia',
                 'AD' : 'Adamawa',
@@ -42,13 +43,12 @@ class CheckoutFormView(UnicornView):
                 'TA' : 'Taraba',
                 'YO' : 'Yobe',
                 'ZA' : 'Zamfara'
-
     }
 
     def mount(self):
-        self.user = User.objects.get(pk=self.request.user.id)
-        return super().mount()
+        self.user = User.objects.all().get(pk=self.request.user.id)
+        self.profile = Profile.objects.all().get(user=self.request.user.id)
     
-    def save_user(self, user:User):
-        user.save()
-        user.user_profile.save()
+    def save(self):#, user:User):
+        self.user.save()
+        self.profile.save()

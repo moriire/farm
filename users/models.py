@@ -21,12 +21,12 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
-
+    
     def get_full_name(self):
         return f"{self.first_name} {self.last_name}"
     
 class Profile(models.Model):
-    user = models.OneToOneField(User, related_name="user_profile", primary_key=True, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, related_name="user_profile", on_delete=models.CASCADE, null=True)
     state = models.CharField(max_length=20, null=True, blank=True)
     street = models.CharField(max_length=60, null=True, blank=True)
     house_no = models.CharField(max_length=5, null=True, blank=True)
