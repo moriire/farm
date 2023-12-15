@@ -27,7 +27,7 @@ class FarmersHomeView(UnicornView):
     
     def update(self):#produce list on mount
         print('refreshing......')
-        self.items = Items.objects.select_related('farmer', 'produce').all()#.filter(produce=produce, quantity=quantity)
+        self.items = Items.objects.select_related('farmer').all()#.filter(produce=produce, quantity=quantity)
         for child in self.children:
             if hasattr(child, 'update_produce'):
                 child.update_produce()

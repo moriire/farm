@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
+{{ user.des }}
     <!-- hero-section -->
       <section class="hero-section gap" style="background-image: url('/static/assets/img/background-1.png');">
           <div class="container">
@@ -18,7 +18,7 @@
                   </div>
                   <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400">
                       <div class="img-restaurant">
-                          <img alt="man" src="{% static 'assets/img/photo-1.png' %}">
+                          <img alt="man" src="{% static 'assets/img/hero4.jpg' %}">
                          
                       </div>
                   </div>
@@ -116,9 +116,141 @@
       </section>
      
        <!-- pricing-table-cards -->
-       <section class="gap no-top">
+       <!--section class="gap no-top">
         <div class="container">
             <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
+                    <div class="pricing-table-cards" style="background-image: url('/static/assets/img/blur-1.png');">
+                        <img alt="food" src="{% static 'assets/img/food-5.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x3</h6>
+                            <h4>$112<span>/ per week</span></h4>
+
+                            <h3>Farm Basic</h3>
+                        </div>
+                        <p>Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Amet justo donec enim malesuada diam vulputate ut pharetra.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400">
+                    <div class="pricing-table-cards" style="background-image: url(/static/assets/img/blur-2.png);">
+                        <img alt="food" src="{% static 'assets/img/food-6.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x4</h6>
+                            <h4>$180<span>/ per week</span></h4>
+
+                            <h3>Farm Premium</h3>
+                        </div>
+                        <p>Volutpat est velit egestas dui id. Elementum eu facilisis sed odio morbi quis. Imperdiet nulla malesuada pellentesque elit.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+                <div class="col-xl- col-lg-4 col-md-6 col-xs-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
+                    <div class="pricing-table-cards" style="background-image: url(/static/assets/img/blur-3.png);">
+                        <img alt="food" src="{% static 'assets/img/food-7.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x4</h6>
+                            <h4>$180<span>/ per week</span></h4>
+
+                            <h3>Farm VIP</h3>
+                        </div>
+                        <p>Facilisi morbi tempus iaculis urna. Consequat id porta nibh venenatis cras sed felis eget. Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                Merchant
+                <div class="col-xl-4 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
+                    <div class="pricing-table-cards" style="background-image: url('/static/assets/img/blur-1.png');">
+                        <img alt="food" src="{% static 'assets/img/food-5.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x3</h6>
+                            <h4>$112<span>/ per week</span></h4>
+
+                            <h3>Small Business Lunch</h3>
+                        </div>
+                        <p>Commodo viverra maecenas accumsan lacus vel facilisis volutpat est. Amet justo donec enim malesuada diam vulputate ut pharetra.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300" data-aos-duration="400">
+                    <div class="pricing-table-cards" style="background-image: url(/static/assets/img/blur-2.png);">
+                        <img alt="food" src="{% static 'assets/img/food-6.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x4</h6>
+                            <h4>$180<span>/ per week</span></h4>
+
+                            <h3>Medium Business Lunch</h3>
+                        </div>
+                        <p>Volutpat est velit egestas dui id. Elementum eu facilisis sed odio morbi quis. Imperdiet nulla malesuada pellentesque elit.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-xs-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="500" data-aos-duration="600">
+                    <div class="pricing-table-cards" style="background-image: url(/static/assets/img/blur-3.png);">
+                        <img alt="food" src="{% static 'assets/img/food-7.png' %}">
+                        <div class="pricing-table-cards-pric">
+                            <h6><i class="fa-solid fa-box" aria-hidden="true"></i>x4</h6>
+                            <h4>$180<span>/ per week</span></h4>
+
+                            <h3>Medium Business Lunch</h3>
+                        </div>
+                        <p>Facilisi morbi tempus iaculis urna. Consequat id porta nibh venenatis cras sed felis eget. Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+                        <ul class="pricing-plan-list">
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Sem et tortor consequat id porta;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Facilisis magna etiam tempor;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nec tincidunt praesent semper;</h5></li>
+                            <li><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Nibh sed pulvinar proin;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Vulputate mi sit amet mauris;</h5></li>
+                            <li class="color"><h5><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Elit ut aliquam purus sit amet;</h5></li>
+                        </ul>
+                        <button class="button-price">Order now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                Farmers
                 <div class="col-xl-4 col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
                     <div class="pricing-table-cards" style="background-image: url('/static/assets/img/blur-1.png');">
                         <img alt="food" src="{% static 'assets/img/food-5.png' %}">
@@ -184,18 +316,18 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section-->
 
      <!-- join-partnership -->
      <section class="join-partnership gap mb-3" style="background-color: #363636;">
         <div class="container">
-            <h2>Want to Join Partnership?</h2>
+            <h2>Sign up for free</h2>
             <div class="row">
               <div class="col-lg-4 aos-init aos-animate" data-aos="flip-up" data-aos-delay="200" data-aos-duration="300">
                   <div class="join-img">
                       <img alt="img" src="{% static 'assets/img/photo-6.jpg' %}">
                       <div class="Join-courier">
-                          <h3>Join Courier</h3>
+                          <h3>Join Farmers</h3>
                           <a href="become-partner.html" class="button button-2">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                       </div>
                   </div>
@@ -204,7 +336,7 @@
                     <div class="join-img">
                         <img alt="img" src="{% static 'assets/img/photo-6.jpg' %}">
                         <div class="Join-courier">
-                            <h3>Join Courier</h3>
+                            <h3>Join Merchant</h3>
                             <a href="become-partner.html" class="button button-2">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
@@ -213,7 +345,7 @@
                     <div class="join-img">
                         <img alt="img" src="{% static 'assets/img/photo-7.jpg' %}">
                         <div class="Join-courier">
-                            <h3>Join Merchant</h3>
+                            <h3>Join Transporter</h3>
                             <a href="become-partner.html" class="button button-2">Learn More <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                         </div>
                     </div>

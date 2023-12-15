@@ -4,7 +4,7 @@
                 <div class="logos-card restaurant-page">
                     <img alt="logo" src="/static/assets/img/logos-2.jpg">
                     <div class="cafa">
-                        <h4><a href="{% url 'farmer' pk=item.farmer.pk %}">Farm Name</a></h4>
+                        <h4><a href="{% url 'farmer' pk=item.farmer.pk %}">{{ item.produce }}</a></h4>
                         <h5><a href="{% url 'farmer' pk=item.farmer.pk %}">{{ item.produce }} <span>-{{ item.quantity }}</span></a></h5>
                         <!--div>
                             <i class="fa-solid fa-star" aria-hidden="true"></i>

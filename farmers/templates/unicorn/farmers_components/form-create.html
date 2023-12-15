@@ -1,40 +1,44 @@
-                <div class="join-courier">
-                    <h3>Post Your Farm Produce</h3>
-                    <!--p>Egestas sed tempus urna et pharetra pharetra massa. Fermentum posuere urna nec tincidunt
+<div class="join-courier">
+    <h3>Post Your Farm Produce</h3>
+    <!--p>Egestas sed tempus urna et pharetra pharetra massa. Fermentum posuere urna nec tincidunt
                         praesent semper.</p-->
-                    <form class="blog-form" unicorn:submit.prevent="save()" method="post">
-                        
-                        <div class="form-row row  mb-2">
-                            <div class="name-form col-6">
-                                <input id="crop" type="text" list="crops" name="name" placeholder="Crop name" unicorn:model="produce" >
-                                {% if crops %}    
-                                <datalist id="crops">
-                                    {% for crop in crops %}    
-                                    
-                                        <option value="{{ crop.name }}" />
-                                    {% endfor %}    
-                                    </datalist>
-                                {% endif %}    
-                            </div>
-                            <div class="name-form .form-group col-6">
-                                <select name="quantity" id="quantity" unicorn:model="quantity" class="form-control">
-                                    <option value="">Select Quantity</option>
-                                    <option value="bags">bags</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-row row mb-2">
-                            <div class="name-form col-6">
-                                <input type="text" name="measure" id="measure" placeholder="Measure" unicorn:model="measure">
-                            </div>
-                            <div class="name-form .form-group col-6">
-                                <input type="number" name="price" id="price" placeholder="Price Per Unit" unicorn:model="price">
-                            </div>
-                        </div>
-                        <div class="form-group mb-2">
-                            <textarea placeholder="Describe your produce" id="desc" name="desc"  unicorn:model="desc"></textarea>
-                        </div>
-                       
-                        <button class="button-price" unicorn:click="save">Share Post</button>
-                    </form>
-                </div>
+    <form class="blog-form" unicorn:submit.prevent="save()" method="post">
+        <div class="form-row row  mb-2">
+            <div class="name-form .form-group col-6">
+                <input id="crop" type="text" list="crops" name="name" placeholder="Crop name" unicorn:model="produce">
+                {% if crops %}
+                <datalist id="crops">
+                    {% for crop in crops %}
+
+                    <option value="{{ crop.name }}" >
+                    {% endfor %}
+                </datalist>
+                {% endif %}
+            </div>
+            <div class="name-form .form-group col-6">
+                <input type="text" placeholder="Measure" unicorn:model="measure">
+                <select name="measure" id="measure">
+                    <option value="">Select </option>
+                    <option value="bags">bag</option>
+                    <option value="basket">basket</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row row mb-2">
+            <div class="name-form .form-group col-6">
+                <input type="number" name="quantity" id="quantity" placeholder="quantity" unicorn:model="quantity">
+            </div>
+
+            <div class="name-form .form-group col-6">
+                <input type="number" name="price" id="price" placeholder="Price Per Unit" unicorn:model="price">
+            </div>
+        </div>
+        <div class="form-group mb-2 ">
+            <textarea placeholder="Describe your produce" id="desc" name="desc" unicorn:model="desc"></textarea>
+        </div>
+
+
+
+        <button class="button-price" unicorn:click="save">Share Post</button>
+    </form>
+</div>

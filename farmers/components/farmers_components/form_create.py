@@ -27,7 +27,7 @@ class FormCreateView(UnicornView):
     def save(self):
         Items.objects.create(
         farmer = self.farmer,
-        produce = Crop.objects.get(name = self.produce),
+        produce = self.produce,
         price = self.price,
         quantity = self.quantity,
         measure = self.measure,
