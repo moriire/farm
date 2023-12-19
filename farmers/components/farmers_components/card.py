@@ -4,7 +4,7 @@ class CardView(UnicornView):
     item: {}
     clicked:bool = False
     def mount(self):
-        self.item = self.component_kwargs['item']
+        self.item = self.component_kwargs.get('item')
 
     def on_clicked(self):
         self.clicked = True

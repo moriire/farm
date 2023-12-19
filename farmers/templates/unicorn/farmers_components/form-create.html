@@ -1,23 +1,22 @@
 <div class="join-courier">
-    <h3>Post Your Farm Produce</h3>
+    <h3>Post Your Produce</h3>
     <!--p>Egestas sed tempus urna et pharetra pharetra massa. Fermentum posuere urna nec tincidunt
                         praesent semper.</p-->
-    <form class="blog-form" unicorn:submit.prevent="save()" method="post">
+    <form class="blog-form" unicorn:submit.prevent="save()" >
         <div class="form-row row  mb-2">
-            <div class="name-form .form-group col-6">
+            <div class="name-form form-group col-6">
                 <input id="crop" type="text" list="crops" name="name" placeholder="Crop name" unicorn:model="produce">
                 {% if crops %}
                 <datalist id="crops">
                     {% for crop in crops %}
 
-                    <option value="{{ crop.name }}" >
+                    <option value="{{ crop.name }}" />
                     {% endfor %}
                 </datalist>
                 {% endif %}
             </div>
-            <div class="name-form .form-group col-6">
-                <input type="text" placeholder="Measure" unicorn:model="measure">
-                <select name="measure" id="measure">
+            <div class="name-form form-group col-6">
+               <select name="measure" id="measure" unicorn:model="measurement">
                     <option value="">Select </option>
                     <option value="bags">bag</option>
                     <option value="basket">basket</option>

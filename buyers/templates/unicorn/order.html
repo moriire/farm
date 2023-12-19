@@ -1,0 +1,15 @@
+{% load unicorn %}
+<section class="gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-5 col-lg-12 aos-init aos-animate" data-aos="flip-up" data-aos-delay="200"
+                data-aos-duration="300">
+                {% unicorn "orders.buyers-cart" %}
+            </div>
+            <div class="offset-xl-1 col-xl-6 col-lg-12 aos-init aos-animate" data-aos="flip-up" data-aos-delay="300"
+                data-aos-duration="400">
+                {% unicorn "orders.checkout-form" %}
+            </div>
+        </div>
+    </div>
+</section>

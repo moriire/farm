@@ -1,0 +1,55 @@
+{% load unicorn %}
+<div class="offset-xl-2 col-xl-8 col-lg-12">
+    <div class="title-container">
+
+        <div class="quote">
+            <div class="quote-text">
+                <img alt="quote" src="assets/img/elements-1.svg">
+                <div class="quote-icon">
+                    <h4>{{ post.body }}</h4>
+                </div>
+            </div>
+            <h6>{{ post.user.get_full_name }} <span>{{ post.user.posted_on }}</span></h6>
+        </div>
+    </div>
+    
+    {% if comments %}
+    <div class="comment">
+        <h2><span>{{ no_of_comment }}</span> Comments</h2>
+    </div>
+    <ul class="comment gap no-top">
+        {% for comment in comments %}
+        <li>
+            <div class="comment-text">
+                <p>{{ comment.body }}</p>
+                <a href="#"><span>Reply<i class="fa-solid fa-reply" aria-hidden="true"></i></span></a>
+            </div>
+            <div class="author-name-comment">
+                <div>
+                    <h6>{{ comment.user.get_full_name }}</h6>
+                    <span>{{ comment.comment_on }}</span>
+                </div>
+                <!--img alt="man" src="assets/img/author-img-1.jpg"-->
+            </div>
+        </li>
+        {% endfor %}
+        <li>
+            <div class="button-gap">
+                <a href="#" class="button button-2 non" unicorn:click="see_more">See all comments<i class="fa-solid fa-angle-down"
+                        aria-hidden="true"></i></a>
+            </div>
+        </li>
+    </ul>
+    {% else %}
+    <div class="comment py-5 my-4">
+        <h2 class="text-center">No Comments Yet</h2>
+    </div>
+    {% endif %}
+    <div class="comment">
+        <!--h2>Leave your comment</h2-->
+        <form class="comment-blog"  unicorn:submit.prevent="save_comment">
+            <textarea placeholder="Enter you comment" unicorn:model="body" ></textarea>
+            <button class="button-price" type="submit">Publish a comment</button>
+        </form>
+    </div>
+</div>

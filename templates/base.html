@@ -26,12 +26,14 @@
 
 <body class="menu-layer" data-aos-easing="ease" data-aos-duration="400" data-aos-delay="0">
   <!-- ========================= preloader start ========================= -->
+ 
   <header>
     <div class="container">
       {% csrf_token %}
-      <div class="row align-items-center justify-content-center">
-        <div class="col-xl-3 col-lg-3 col-md-3">
-          <div class="header-style">
+      {% with request.resolver_match.url_name as url_name %}
+        <div class="row align-items-center">
+            <div class="col-xl-3">
+                <div class="header-style">
             <a href="/">
              logo
             </a>
@@ -87,7 +89,7 @@
           <nav class="navbar">
             <ul class="navbar-links">
               {% if user.is_authenticated %}
-              <li class="navbar-dropdown {% if url_name == 'home' %} active{% endif %}">
+              <li class="navbar-dropdown {% if url_name == 'farmers' %} active{% endif %}">
                 <a href="/farmers/">Home</a>
               </li>
               {% else %}
@@ -97,6 +99,9 @@
               {% endif %}
               <li class="navbar-dropdown {% if url_name == 'about' %} active{% endif %}">
                 <a href="/about/">About Us</a>
+              </li>
+              <li class="navbar-dropdown {% if url_name == 'posts' %} active{% endif %}">
+                <a href="/posts/">Forum</a>
               </li>
               <li class="navbar-dropdown">
                 <a href="#">I am a</a>
@@ -198,12 +203,12 @@
           </div>
           <ul>
 
-            <li><a href="index.html">Home</a>
+            <li ><a href="/" >Home</a>
             </li>
 
-            <li><a href="about.html">About Us</a></li>
-
-            <li class="menu-item-has-children"><a href="JavaScript:void(0)">Restaurants</a>
+            <li><a href="about">About Us</a></li>
+            <li><a href="posts">Forum</a></li>
+            <!--li class="menu-item-has-children"><a href="JavaScript:void(0)">Restaurants</a>
 
               <ul class="sub-menu">
 
@@ -212,8 +217,8 @@
                 <li><a href="checkout.html">Checkout</a></li>
               </ul>
 
-            </li>
-            <li class="menu-item-has-children"><a href="JavaScript:void(0)">Pages</a>
+            </li-->
+            <!--li class="menu-item-has-children"><a href="JavaScript:void(0)">Pages</a>
 
               <ul class="sub-menu">
                 <li><a href="/services/">Services</a></li>
@@ -223,19 +228,20 @@
                 <li><a href="404.html">404</a></li>
               </ul>
 
-            </li>
+            </li-->
 
             <li><a href="/contact/">contacts</a></li>
 
           </ul>
 
-          <a href="JavaScript:void(0)" id="res-cross"></a>
+          <a href="JavaScript:void(0)" id="res-cross" ></a>
         </div>
       </div>
+      {% endwith %}
     </div>
   </header>
+ 
   {% block content %} {% endblock %}
-
   <!-- ========================= scroll-top ========================= -->
   <a href="#" class="scroll-top btn-hover">
     <i class="lni lni-chevron-up"></i>

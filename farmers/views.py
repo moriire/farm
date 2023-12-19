@@ -12,7 +12,7 @@ class IndexView(UnicornView):
 class Farmers(LoginRequiredMixin, TemplateView):
     template_name = "farmers.html"
 
-class Search(LoginRequiredMixin, TemplateView):
+class Search(LoginRequiredMixin, UnicornView):
     template_name = "farmers-search.html"
     
 class Farmer(LoginRequiredMixin, DetailView):

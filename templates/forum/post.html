@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load unicorn %}
+{% block content %}
+<!-- blog-content -->
+<section class="blog-content gap">
+    <div class="container">
+        <div class="row">
+            {% unicorn 'post-with-comments' %}
+        </div>
+    </div>
+</section>
+{% endblock %}

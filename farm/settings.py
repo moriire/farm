@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     "django_unicorn",
     "users",
     "farmers",
-    "buyers"
+    "buyers",
+    "forum"
 ]
 
 MIDDLEWARE = [

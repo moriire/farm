@@ -24,4 +24,16 @@ class Items(models.Model):
 
     def __str__(self) -> str:
         return self.produce
+    
+class SelectedItems(models.Model):
+    item = models.ForeignKey(Items, related_name="selected_item", on_delete=models.CASCADE)
+    buyer =  models.ForeignKey(User, on_delete=models.CASCADE, related_name="selected_item_buyer")
+    unit = models.IntegerField(default=1)
+    noted = models.BooleanField(default=False)
+    def __str__(self) -> str:
+        return self.item.produce
+    
+    def cart_item_amount(self):
+        return self.item.price * self.unit
+
   
