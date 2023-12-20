@@ -18,6 +18,7 @@ class Items(models.Model):
     quantity = models.IntegerField(default=1)
     measurement = models.CharField(max_length=20, choices=Measure.choices)
     desc = models.TextField(default="")
+    img = models.ImageField(blank=True)
 
     def search_url(self):
         return f'/farmers/search/?produce={self.produce}&quantitty={self.quantity}'

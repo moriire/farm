@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-6 px-3">
+            <div class="join-courier">
+                <h3>Post Your Produce</h3>
+
+                <form class="blog-form" unicorn:submit.prevent="save()">
+                    <div class="form-row row  mb-2">
+                        <div class="name-form form-group col-6">
+                            <input id="crop" type="text" list="crops" placeholder="Crop name" unicorn:model="produce">
+                            {% if crops %}
+                            <datalist id="crops">
+                                {% for crop in crops %}
+
+                                <option value="{{ crop.name }}" />
+                                {% endfor %}
+                            </datalist>
+                            {% endif %}
+                        </div>
+                        <div class="name-form form-group col-6">
+                            <select name="measure" id="measure" unicorn:model="measurement">
+                                <option value="">Select </option>
+                                <option value="bags">bag</option>
+                                <option value="basket">basket</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row row mb-2">
+                        <div class="name-form .form-group col-6">
+                            <input type="number" id="quantity" placeholder="quantity" unicorn:model="quantity">
+                        </div>
+
+                        <div class="name-form .form-group col-6">
+                            <input type="number" id="price" placeholder="Price Per Unit" unicorn:model="price">
+                        </div>
+                    </div>
+                    <div class="form-group mb-2 ">
+                        <textarea placeholder="Describe your produce" id="desc" unicorn:model="desc"></textarea>
+                    </div>
+
+                    <button class="button-price" type="submit">Share Post</button>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="join-courier table table-responsive responsive" style="height: 80vh;">
+                <table class="table table-striped table-hovered">
+                    <thead>
+                        <th>#</th>
+                        <th>Produce</th>
+                        <th>Cost</th>
+                        <th>Cost</th>
+                        <th>Cost</th>
+                    </thead>
+                    <tbody>
+                        {% for item in items %}
+                        <tr>
+                            <td>{{ item.produce }}</td>
+                            <td>{{ item.price }}</td>
+                            <td>{{ item.produce }}</td>
+                            <td>{{ item.produce }}</td>
+                            <td><a href="" class="btn">Visible</a>
+                            </td>
+                            <td><a href="" class="btn">Upload</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

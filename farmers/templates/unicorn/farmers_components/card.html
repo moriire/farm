@@ -1,36 +1,50 @@
-          {% load unicorn %}
-        
-          <div class="col-lg-6 aos-init aos-animate mb-3" data-aos="flip-up" data-aos-delay="200" data-aos-duration="300">
-                <div class="logos-card restaurant-page">
-                    <img alt="logo" src="/static/assets/img/logos-2.jpg">
-                    <div class="cafa">
-                        <h4><a href="{% url 'farmer' pk=item.farmer.pk %}">{{ item.produce }}</a></h4>
-                        <h5><a href="{% url 'farmer' pk=item.farmer.pk %}">{{ item.produce }} <span>-{{ item.quantity }}</span></a></h5>
-                        <!--div>
-                            <i class="fa-solid fa-star" aria-hidden="true"></i>
-                            <i class="fa-solid fa-star" aria-hidden="true"></i>
-                            <i class="fa-solid fa-star" aria-hidden="true"></i>
-                            <i class="fa-solid fa-star" aria-hidden="true"></i>
-                            <i class="fa-regular fa-star" aria-hidden="true"></i>
-                        </div-->
-                        <div class="cafa-button">
-                            <a href="{{ item.search_url }}">Compare</a>
-                            <a href="#">Compare</a>
-                            <a class="end" href="#">Similar</a>
-                        </div>
-                       
-                       
-                    </div>
-                    <div>
-                        <p>{{ item.desc }}. b vvvv vvvv fff fffffffbbb bbb vvvvvvvv fffffff bbbbbb vvvvvvvv fffffff</p>     
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <div>
-                            <button class="btn btn-primary"  unicorn:click="add_item()" {% if clicked %} disabled {% else %} '' {% endif %} >Add to cart</button>
-                        </div>
+{% load unicorn %}
+<div class="col-xl-6 col-lg-6 aos-init aos-animate" data-aos="flip-up" data-aos-delay="400" data-aos-duration="500">
+    <div class="dish">
+        <img alt="food-dish" src="/static/assets/img/logos-2.jpg" >
+        <div class="dish-foods">
+            <h3>{{ item.produce }}</h3>
+            <div class="dish-icon">
+                <div class="cafa-button">
+                    {{ item.img }}
+                    <a href="#">Breakfast</a>
+                    <a href="#">Brunch</a>
+                </div>
+                <div class="dish-icon end">
+
+                    <i class="info fa-solid fa-circle-info" aria-hidden="true"></i>
+                    <div class="star">
+                        <a href="#"><i class="fa-solid fa-heart" aria-hidden="true"></i></a>
                     </div>
                 </div>
-               
             </div>
-           
-           
+            <div class="price">
+                <h3>{{ item.price }} /{{ item.measurement }}</h3>
+                <div class="qty-input">
+                    <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
+                    <input class="product-qty" type="number" name="product-qty" min="0" value="1">
+                    <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
+                </div>
+            </div>
+            <button class="button-price">Add to Cart<i class="fa-solid fa-bag-shopping"
+                    aria-hidden="true"></i></button>
+        </div>
+        <div class="dish-info" style="display: none;">
+            <i class="info2 fa-solid fa-xmark" aria-hidden="true"></i>
+            <h5>
+                Rice with shrimps and kiwi
+            </h5>
+            <div class="cafa-button">
+                <a href="#">Breakfast</a>
+                <a href="#">Brunch</a>
+            </div>
+            <p>In egestas erat imperdiet sed euismod nisi porta. Ultrices sagittis
+                orci a scelerisque. Diam quam nulla porttitor.</p>
+            <ul class="menu-dish">
+                <li>Nulla porttitor massa id;</li>
+                <li>Aliquam vestibulum morbi;</li>
+                <li>Blandit donec adipiscing;</li>
+            </ul>
+        </div>
+    </div>
+</div>

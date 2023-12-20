@@ -23,3 +23,6 @@ class Farmer(LoginRequiredMixin, DetailView):
 
 class CreateItem(LoginRequiredMixin, TemplateView):
     template_name = "post.html"
+
+class CreateProduce(LoginRequiredMixin, TemplateView):
+    template_name = "create-produce.html"

@@ -5,7 +5,8 @@ from django.contrib import messages
 
 from django.core.files.storage import FileSystemStorage
 import uuid
-class FormCreateView(UnicornView):
+
+class AddProduceView(UnicornView):
     crops:Crop= Crop.objects.none()
     items:Items = Items.objects.none()
     item:Items = None
@@ -28,23 +29,16 @@ class FormCreateView(UnicornView):
         self.quantity = 1
         self.measurememt =""
         self.desc= ""
-        self.parent.update()
+        #self.parent.update()
         
     def save(self):
-        if self.request.method == 'POST' and self.request.FILES['img']:
-            img = self.request.FILES['img']
-            fs = FileSystemStorage()
-            filename = fs.save(img.name, img)
-            filename = fs.url(filename)
-        item = Items(
+        Items.objects.create(
             farmer = self.farmer,
-        produce = self.produce,
-        price = self.price,
-        quantity = self.quantity,
-        measurement = self.measurememt,
-        desc = self.desc,
-        img = filename
+            produce = self.produce,
+            price = self.price,
+            quantity = self.quantity,
+            measurement = self.measurememt,
+            desc = self.desc
         )
-        item.save()
-        self.parent.update()
+        self.update()
         print("success")

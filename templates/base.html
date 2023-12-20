@@ -89,11 +89,11 @@
           <nav class="navbar">
             <ul class="navbar-links">
               {% if user.is_authenticated %}
-              <li class="navbar-dropdown {% if url_name == 'farmers' %} active{% endif %}">
+              <li class="navbar-dropdown {% if url_name in 'farmers, home' %} active{% endif %}">
                 <a href="/farmers/">Home</a>
               </li>
               {% else %}
-              <li class="navbar-dropdown {% if url_name == 'home' %} active{% endif %}">
+              <li class="navbar-dropdown {% if url_name == 'farmers, home' %} active{% endif %}">
                 <a href="/">Home</a>
               </li>
               {% endif %}
