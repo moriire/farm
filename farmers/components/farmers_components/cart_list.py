@@ -10,12 +10,13 @@ class CartListView(UnicornView):
 
     def mount(self):
         self.cart = self.component_kwargs.get('cart')
-        return super().mount()
-    
+
+    def update(self):
+        self.cart = self.component_kwargs.get('cart')
+
     def del_item(self):
-        self.onclick()
-        self.parent.items_checked.remove(self.cart)
-        print('deleting')
-        #self.parent.remove_item(self.cart)
-        
-   
+        self.parent.del_item(self.cart)
+        #self.onclick()
+        #self.parent.items_checked.remove(self.cart)
+        #print('deleting')
+        #self.update()

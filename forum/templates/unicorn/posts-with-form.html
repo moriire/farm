@@ -3,6 +3,7 @@
     <div class="col-xl-12 my-5 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
         <div class="comment">
             <h2>Ask your ???</h2>
+            {{ unicorn_errors }}
             <form class="comment-blog" unicorn:submit.prevent="save">
                 <textarea placeholder="Enter you comment" unicorn:model="body" minlength="100"></textarea>
 

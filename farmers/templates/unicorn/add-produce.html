@@ -62,7 +62,7 @@
                             <td>{{ item.produce }}</td>
                             <td><a href="" class="btn">Visible</a>
                             </td>
-                            <td><a href="" class="btn">Upload</a></td>
+                            <td><a href="{% url 'upload' pk=item.id %}" class="btn">Upload</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

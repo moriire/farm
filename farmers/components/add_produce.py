@@ -2,7 +2,6 @@ from django_unicorn.components import UnicornView, LocationUpdate
 from farmers.models import Items, Crop
 from users.models import User
 from django.contrib import messages
-
 from django.core.files.storage import FileSystemStorage
 import uuid
 
@@ -20,7 +19,7 @@ class AddProduceView(UnicornView):
 
     def mount(self):
         self.crops= Crop.objects.all()
-        self.items= Items.objects.all()
+        self.items= Items.objects.filter(farmer = self.request.user)
         self.farmer = self.request.user#component_kwargs.get('user')
     
     def update(self):

@@ -46,10 +46,14 @@
     </div>
     {% endif %}
     <div class="comment">
+        {{ unicorn.errors }}
         <!--h2>Leave your comment</h2-->
         <form class="comment-blog"  unicorn:submit.prevent="save_comment">
             <textarea placeholder="Enter you comment" unicorn:model="body" ></textarea>
-            <button class="button-price" type="submit">Publish a comment</button>
+            <button class="button-price" type="submit" unicorn:loading.class="loading spinner" unicorn:loading.attr="disabled">Publish a comment
+                <span class="sr-only">Loading...</span>
+            </button>
+
         </form>
     </div>
 </div>

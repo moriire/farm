@@ -19,27 +19,26 @@
                 </div>
             </div>
             <div class="price">
-                <h3>{{ item.price }} /{{ item.measurement }}</h3>
+                <h3>{{ item.price }}/{{ item.measurement  }}</h3>
                 <div class="qty-input">
                     <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
                     <input class="product-qty" type="number" name="product-qty" min="0" value="1">
                     <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
                 </div>
             </div>
-            <button class="button-price">Add to Cart<i class="fa-solid fa-bag-shopping"
+            <button class="button-price" unicorn:click="add_item">Add to Cart<i class="fa-solid fa-bag-shopping"
                     aria-hidden="true"></i></button>
         </div>
         <div class="dish-info" style="display: none;">
             <i class="info2 fa-solid fa-xmark" aria-hidden="true"></i>
             <h5>
-                Rice with shrimps and kiwi
+                {{ item.produce }}
             </h5>
             <div class="cafa-button">
                 <a href="#">Breakfast</a>
                 <a href="#">Brunch</a>
             </div>
-            <p>In egestas erat imperdiet sed euismod nisi porta. Ultrices sagittis
-                orci a scelerisque. Diam quam nulla porttitor.</p>
+            <p>{{ item.desc }}</p>
             <ul class="menu-dish">
                 <li>Nulla porttitor massa id;</li>
                 <li>Aliquam vestibulum morbi;</li>

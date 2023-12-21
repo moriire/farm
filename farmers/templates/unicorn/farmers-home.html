@@ -15,7 +15,7 @@
           {% endfor %}
          
         </ul>
-        <button class="button-price" unicorn:click="save_to_db()">Checkout</button>
+        <button class="button-price" unicorn:click="save_to_db()" {% if clicked %}disabled{% endif %}>Checkout</button>
 
       </div>
     </div>
@@ -25,7 +25,7 @@
 
 
 	<!-- hero-section -->
-	<section class="hero-section about blog-page gap" style="background-image: url(assets/img/background-3.png);">
+	<section class="hero-section about .blog-page .gap" style="background-image: url(assets/img/background-3.png);">
 		<div class="container-fluid">
 			<div class="row align-items-center">
 				<div class="col-lg-12">
@@ -41,7 +41,7 @@
 										aria-hidden="true"></i>Checkout</a></li>
 						</ul>
 
-                        <div class="row mt-5">
+                        <!--div class="row mt-5">
                             <div class="col-lg-6">
                                 <h2 data-aos="fade-up" data-aos-delay="300" data-aos-duration="400"
 							class="aos-init aos-animate">Checkout</h2>
@@ -50,12 +50,20 @@
 							    vitae sapien pellentesque.</p>
                             </div>
                             <div class="col-lg-6">
-                                {% unicorn 'farmers_components.form-create' %}
+                                {# unicorn 'farmers_components.form-create' #}
                             </div>
-                        </div>
+                        </div-->
 						
 					</div>
+                    
 				</div>
+                <div class="row form-inline d-flex justify-content-center my-5">
+                    <select name="" id="" class="form-select" style="width: 20%; border-radius: 50px 0 0 50px;">
+                        <option value="">
+                            fff
+                        </option>
+                    </select><input type="search" class="form-control" style="width: 30%; border-radius: 0 50px 50px 0;">
+                </div>
 			</div>
 		</div>
 	</section>
@@ -83,7 +91,7 @@
         </div>
     </div>
 </section-->
-<section class="banner aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
+<!--section class="banner aos-init aos-animate" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
     <div class="container">
         <div class="banner-img" style="background-image: url(/static/assets/img/food-4.png);">
            
@@ -91,7 +99,6 @@
                 <div class="col-xl-6 col-lg-12">
                     <div class="choose-lunches">
 
-                        <!--h2>Choose 2 lunches</h2-->
                         <h3>pay for one</h3>
                         <a href="#" class="button button-2 non">Order Now<i class="fa-solid fa-arrow-right"
                                 aria-hidden="true"></i></a>
@@ -100,7 +107,7 @@
             </div>
         </div>
     </div>
-</section>
+</section-->
 <section class="best-restaurants gap">
     {% unicorn 'farmers_components.items-list' items=items %}
 </section>

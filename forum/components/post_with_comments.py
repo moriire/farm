@@ -24,6 +24,7 @@ class PostWithCommentsView(UnicornView):
         self.post = PostModel.objects.get(id = self.pk)
         self.no_of_comment = self.post.post.count()
         self.comments = self.post.post.all().order_by('-comment_on')[:3]
-
+        self.body = ""
+        
     def see_more(self):
         self.comments = self.post.post.all().order_by('-comment_on')

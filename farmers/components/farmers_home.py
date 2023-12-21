@@ -1,6 +1,8 @@
 from django_unicorn.components import UnicornView, QuerySetType, LocationUpdate
 from farmers.models import Items, SelectedItems
 from django.shortcuts import redirect
+
+
 class FarmersHomeView(UnicornView):
     items:QuerySetType[Items] = Items.objects.none()#Initialize item from database
     items_checked=[]
@@ -38,7 +40,13 @@ class FarmersHomeView(UnicornView):
                 buyer = self.request.user,
                 item = item_instance
             )
+            self.items_checked.clear()
         #return LocationUpdate(redirect('cart'), 'success')
         return redirect('cart')
+    
+    def del_item(self, x):
+        self.items_checked.remove(x)
+        print('deleting')
+        #self.checked()
 
 
