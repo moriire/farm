@@ -1,12 +1,11 @@
 {% load unicorn %}
 <div class="col-xl-6 col-lg-6 aos-init aos-animate" data-aos="flip-up" data-aos-delay="400" data-aos-duration="500">
     <div class="dish">
-        <img alt="food-dish" src="/static/assets/img/logos-2.jpg" >
+        <img alt="{{ item.produce }}" src="{{ item.item_img }}" >
         <div class="dish-foods">
             <h3>{{ item.produce }}</h3>
             <div class="dish-icon">
                 <div class="cafa-button">
-                    {{ item.img }}
                     <a href="#">Breakfast</a>
                     <a href="#">Brunch</a>
                 </div>
@@ -18,7 +17,7 @@
                     </div>
                 </div>
             </div>
-            <div class="price">
+            <div class="price align-items-center text-lowercase">
                 <h3>{{ item.price }}/{{ item.measurement  }}</h3>
                 <div class="qty-input">
                     <button class="qty-count qty-count--minus" data-action="minus" type="button">-</button>
@@ -26,7 +25,7 @@
                     <button class="qty-count qty-count--add" data-action="add" type="button">+</button>
                 </div>
             </div>
-            <button class="button-price" unicorn:click="add_item">Add to Cart<i class="fa-solid fa-bag-shopping"
+            <button class="button-price" unicorn:click="add_item">Add to Cart<i class="fa-solid fa-shopping-cart"
                     aria-hidden="true"></i></button>
         </div>
         <div class="dish-info" style="display: none;">

@@ -27,19 +27,30 @@ class CreateItem(LoginRequiredMixin, TemplateView):
 class CreateProduce(LoginRequiredMixin, TemplateView):
     template_name = "create-produce.html"
 
-class UploadFileForm(forms.Form):
-    img = forms.ImageField(label="Upload Image")
+class UploadFileForm(forms.ModelForm):
+    img = forms.ImageField(label="Upload Image", required=False)
+    class Meta:
+        model = Items
+        #exclude =('img',)# ('item', 'farmer', 'produce', 'price', 'bought', 'quantity', 'measurement', 'desc')
+        fields = ('img',)#"__all__"
 
 class Upload(LoginRequiredMixin, TemplateView):
-    def get(self, request, pk=None):
-        form = UploadFileForm()
+    def get(self, request, pk):
+        item = Items.objects.get(id=pk)
+        if item.DoesNotExist():
+            form = UploadFileForm()
+        else:
+            form = UploadFileForm(instance=item)
         return render(request, "upload.html", {"form": form})
 
     def post(self, request, pk):
-        item = Items.objects.get(id=pk)
+        item = Items.objects.get(pk=pk)
         form = UploadFileForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
-            form.save()
-            #handle_uploaded_file(request.FILES["file"])
-            item.save()
-            return HttpResponseRedirect("/success/url/")
+            #form.save()#
+            p = form.save(commit=False)
+            print(form)
+            p.img = request.FILES.get('img')#cleaned_data.get('img')
+            p.save()
+            return HttpResponseRedirect("/farmers/add/")
+        return render(request, "upload.html", {"form": form})

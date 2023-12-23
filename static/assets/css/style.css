@@ -159,10 +159,10 @@ figure {
   padding-left: 30px;
 }
 .navbar-links li a:hover {
-    color: #F29F05;
+    color: #0c7133;
 }
 .navbar-links li.active > a {
-    color: #F29F05;
+    color: #0c7133;
 }
 .navbar-links li > a:after {
   content: '';
@@ -176,7 +176,7 @@ figure {
   transition: 0.4s all;
 }
 .navbar-links li.active > a:after {
-  background: #F29F05;
+  background: #0c7133;
 }
 .navbar-links li a {
     border: 1px solid transparent;
@@ -224,7 +224,7 @@ header {
 .restaurant .nice-select .option:hover,
 .restaurant .nice-select .option.focus,
 .restaurant .nice-select .option.selected.focus {
-    background: #f29f05;
+    background: #0c7133;
     color: black;
 }
 .restaurant .nice-select.open .list{
@@ -285,7 +285,7 @@ header {
 }
 .wilmington.location-restaurant i {
     font-size: 18px;
-    background-color: #f29f05;
+    background-color: #0c7133;
     color: white;
     border-radius: 33px;
     height: 40px;
@@ -310,9 +310,9 @@ header {
 }
 .button-2 {
   color: #fff;
-  border: 2px solid #F29F05;
-  background-image: -webkit-linear-gradient(30deg, #F29F05 50%, transparent 50%);
-  background-image: linear-gradient(30deg, #F29F05 50%, transparent 50%);
+  border: 2px solid #0c7133;
+  background-image: -webkit-linear-gradient(30deg, #0c7133 50%, transparent 50%);
+  background-image: linear-gradient(30deg, #0c7133 50%, transparent 50%);
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: 0%;
@@ -399,7 +399,7 @@ header {
 
 .cafa-button a {
     padding: 5px 15px;
-    border: 1px solid #f29f05;
+    border: 1px solid #0c7133;
     border-radius: 10px;
     font-size: 14px;
 }
@@ -438,13 +438,13 @@ header {
     padding-left: 15px;
 }
 a.button-2.non {
-    background-image: -webkit-linear-gradient(30deg, #f29f0500 50%, transparent 50%);
+    background-image: -webkit-linear-gradient(30deg, #0c713300 50%, transparent 50%);
 }
 a.button-2.non:hover {
   color: #fff;
-  border: 3px solid #F29F05;
-  background-image: -webkit-linear-gradient(30deg, #F29F05 50%, transparent 50%);
-  background-image: linear-gradient(30deg, #F29F05 50%, transparent 57%);
+  border: 3px solid #0c7133;
+  background-image: -webkit-linear-gradient(30deg, #0c7133 50%, transparent 50%);
+  background-image: linear-gradient(30deg, #0c7133 50%, transparent 57%);
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: 0%;
@@ -632,7 +632,7 @@ a.button.button-2 i {
     position: absolute;
     height: 410px;
     width: 643px;
-    border: 7px solid #f29f05;
+    border: 7px solid #0c7133;
     border-radius: 20px;
     left: 4%;
     top: 8%;
@@ -867,7 +867,7 @@ ul.social-media li a i{
     justify-content: center;
 }
 ul.social-media li a i:hover {
-    border: 1px #f29f05;
+    border: 1px #0c7133;
     color: white;
 }
 .footer-two {
@@ -1037,7 +1037,7 @@ ul.paragraph li i {
 .video-section-img:before {
     content: "";
     position: absolute;
-    border: 7px #F29F05 solid;
+    border: 7px #0c7133 solid;
     height: 567px;
     width: 579px;
     border-radius: 50px;
@@ -1053,7 +1053,7 @@ ul.paragraph li i {
     top: 50%;
     font-size: 30px;
     transform: translate(-50%, -50%);
-    background-color: #f29f05;
+    background-color: #0c7133;
     height: 70px;
     width: 70px;
     justify-content: center;
@@ -1100,7 +1100,7 @@ ul.paragraph li i {
     color: #787878;
 }
 .our-team ul.social-media li a i:hover {
-    border: 1px #f29f05;
+    border: 1px #0c7133;
     color: white;
 }
 .our-team:before {
@@ -1238,7 +1238,7 @@ ul.paragraph li i {
 }
 .subscribe-section.about:before {
     content: "";
-    background-color: #f29f05c4;
+    background-color: #0c7133c4;
     width: 100%;
     height: 700px;
     position: absolute;
@@ -1417,13 +1417,13 @@ ul.paragraph li i {
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     background-color: transparent;
-    color: #F29F05;
+    color: #0c7133;
     font-size: 18px;
     font-weight: bold;
 
 }
 .nav-link:focus, .nav-link:hover{
-     color: #F29F05;
+     color: #0c7133;
 }
 .nav-pills .nav-link.active {
     position: relative;
@@ -1449,7 +1449,7 @@ ul.paragraph li i {
 .like-meal a{
      font-size: 18px;
     font-weight: bold;
-    color: #F29F05;
+    color: #0c7133;
     padding-right: 20px;
 }
 .like-meal i{
@@ -1569,7 +1569,7 @@ header.two {
     text-indent: -100px;
     overflow: hidden;
     position: relative;
-    border: 1px solid #F29F05;
+    border: 1px solid #0c7133;
     border-radius: 8px;
 }
 .qty-input .qty-count:before, .qty-input .qty-count:after {
@@ -1578,7 +1578,7 @@ header.two {
   width: 10px;
   position: absolute;
   display: block;
-  background: #F29F05;
+  background: #0c7133;
   top: 0;
   bottom: 0;
   left: 0;
@@ -1639,14 +1639,14 @@ header.two {
     width: 100%;
     padding: 15px;
     border-radius: 15px;
-    border: 1px solid #F29F05;
+    border: 1px solid #0c7133;
 }
 .button-price i {
     padding-left: 20px;
 }
 .button-price:hover {
     background-color: transparent;
-    color: #F29F05;
+    color: #0c7133;
 
 }
 /*-------------            Service page        -------------*/
@@ -1689,7 +1689,7 @@ header.two {
 }
 .hero-section-img-service:before {
     position: absolute;
-    border: #f29f05 7px solid;
+    border: #0c7133 7px solid;
     height: 616px;
     width: 500px;
     content: "";
@@ -1729,7 +1729,7 @@ header.two {
 .services-card-style i:after {
     position: absolute;
     content: "";
-    border: #F29F05 3px solid;
+    border: #0c7133 3px solid;
     height: 72px;
     width: 70px;
     border-radius: 20px;
@@ -1745,7 +1745,7 @@ header.two {
     border-radius: 60px;
 }
 .services-card-style:hover {
-    border: 1px solid #F29F05;
+    border: 1px solid #0c7133;
     border-radius: 10px;
 }
 .services-card-style:hover i:after{
@@ -1788,7 +1788,7 @@ header.two {
 }
 .sit-at-img:before {
     border-radius: 40px;
-    border: 8px solid #F29F05;
+    border: 8px solid #0c7133;
     content: "";
     position: absolute;
     height: 600px;
@@ -1997,7 +1997,7 @@ ul.food-dishes li {
     position: absolute;
     content: "";
     border-radius: 20px;
-    border: 8px solid #F29F05;
+    border: 8px solid #0c7133;
     height: 443px;
     width: 640px;
     left: 5%;
@@ -2663,7 +2663,7 @@ form.checkout-form {
 
 /* CHECKED STYLES */
 [type=radio]:checked + img {
-    outline: 1px solid #f29f05;
+    outline: 1px solid #0c7133;
     padding: 12px 18px;
 }
 .tab-pane label {
@@ -2709,7 +2709,7 @@ form.checkout-form {
 
 /* When the checkbox is checked, add a blue background */
 .checkbox-one input:checked ~ .checkmark {
-  background-color: #F29F05;
+  background-color: #0c7133;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -2903,7 +2903,7 @@ body.menu-layer:before {
 }
 .menu-cls-btn:hover .cls-leftright,
 .menu-cls-btn:hover .cls-leftright, .menu-cls-btn:hover .cls-rightleft {
-    background-color: #F29F05;
+    background-color: #0c7133;
 }
 .menu-cls-btn:hover .cls-leftright {
   -webkit-transform: rotate(-45deg);

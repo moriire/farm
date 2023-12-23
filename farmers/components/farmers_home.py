@@ -24,11 +24,10 @@ class FarmersHomeView(UnicornView):
     def checked(self, item):#for card
         self.items_checked.append(item)
         self.item_count = len(self.items_checked)
-        print(self.total_price)
     
     def update(self):#produce list on mount
         print('refreshing......')
-        self.items = Items.objects.select_related('farmer').all()#.filter(produce=produce, quantity=quantity)
+        self.items = Items.objects.select_related('farmer').all()#.filter(img=False)#produce=produce, quantity=quantity)
         for child in self.children:
             if hasattr(child, 'update_produce'):
                 child.update_produce()
