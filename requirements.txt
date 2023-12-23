@@ -3,6 +3,7 @@ beautifulsoup4==4.12.2
 cachetools==4.2.4
 decorator==4.4.2
 Django==5.0
+Pillow
 django-unicorn==0.57.1
 django-utils-six==2.0
 gunicorn==21.2.0
